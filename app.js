@@ -18,6 +18,10 @@ const adminRouter = require("./routes/admin/adminRouter")
 
 const dashboardRouter = require("./routes/dashboard/dashboardRouter")
 const messageRouter = require("./routes/message/messageRouter")
+
+const actualiteImageRouter = require("./routes/actualites/actualites_images.routes")
+const actualitePosteRouter = require("./routes/actualites/actualites_postes.routes")
+
 const bindUserWithRefreshToken = require("./middlewares/bindUserWithRefreshToken")
 const handleSocketEvents = require("./socket")
 const requireAuth = require("./middlewares/requireAuth")
@@ -45,12 +49,13 @@ var corsOptions = {
       }
    },
 }
+
 app.use(cors(corsOptions))
 app.set("view engine", "ejs")
 app.use(express.static(__dirname + "/public"))
+app.use(fileUpload())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(fileUpload())
 
 app.all("*", bindUserWithRefreshToken)
 
@@ -58,6 +63,8 @@ app.all("*", bindUserWithRefreshToken)
 app.use("/auth", authRouter)
 app.use("/dashboard", requireAuth, dashboardRouter)
 app.use("/message", requireAuth, messageRouter)
+app.use("/actualites", actualiteImageRouter)
+app.use("/actualites/postes", actualitePosteRouter)
 
 // admin web routes
 app.use("/admin", adminRouter)

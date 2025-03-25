@@ -4,7 +4,7 @@
    "description": "",
    "main": "server-template.js",
    "scripts": {
-      "start": "nodemon server-wasili.js",
+      "start": "nodemon server-template.js",
       "test": "jest --detectOpenHandles",
       "lint": "eslint .",
       "prepare": "husky"
