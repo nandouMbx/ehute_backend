@@ -1,0 +1,27 @@
+{
+  "version": "2.4.1",
+  "summary": {
+    "title": "Model de test",
+    "owner": "Claude",
+    "description": "Description du modele",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "DIGRAMME STRIDE",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.4.1",
+        "cells": [],
+        "description": "Ça va aider à traiter les failles STRIDE"
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Autres dev",
+    "threatTop": 0
+  }
+}
